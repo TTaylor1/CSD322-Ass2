@@ -6,15 +6,17 @@
 package com.corejsf;
 
 import java.io.Serializable;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+//import javax.inject.Named;
 //import javax.enterprise.context.Dependent;
-import javax.enterprise.context.SessionScoped;
+//import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.SessionScoped;
 
 /**
  *
  * @author 14034305
  */
-@Named(value = "userBean")
+@ManagedBean(name="user")
 @SessionScoped
 public class UserBean implements Serializable {
     private String name;
@@ -24,46 +26,29 @@ public class UserBean implements Serializable {
     public UserBean() {
     }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getName() { return name; }
+    public void setName(String newValue) { name = newValue; }
 
-    /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
+   public String getPassword() { return password; }
+   public void setPassword(String newValue) { password = newValue; } 
 
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
+ /**
      * @return the gender
      */
-    public String getGender() {
+    public String getGender() {                
         return gender;
     }
 
-    /**
-     * @param gender the gender to set
-     */
-    public void setGender(String gender) {
-        this.gender = gender;
+   
+    public void setGender(String newValue) {
+        if (gender.equals("male")){
+            newValue = "Mr.";
+        }
+        else if(gender.equals("female")) {
+            newValue = "Mrs.";
+        }
+        this.gender = newValue;
     }
     
 }
