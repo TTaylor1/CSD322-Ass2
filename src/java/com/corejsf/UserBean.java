@@ -22,7 +22,7 @@ public class UserBean implements Serializable {
     private String name;
     private String password;
     private String gender;
-   
+    
     public UserBean() {
     }
 
@@ -44,11 +44,11 @@ public class UserBean implements Serializable {
     public void setGender(String newValue) {
         if (gender.equals("male")){
             newValue = "Mr.";
-        }
-        else if(gender.equals("female")) {
+        }else if (gender.equals("female")){
             newValue = "Mrs.";
         }
-        this.gender = newValue;
+        gender = newValue;
+        
     }
     
 }
