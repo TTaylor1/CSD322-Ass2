@@ -7,8 +7,13 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+<<<<<<< HEAD
 <project name="Assignment2" default="default" basedir=".">
     <description>Builds, tests, and runs the project Assignment2.</description>
+=======
+<project name="F17_csd322_Thomas_Taylor_Lab1" default="default" basedir=".">
+    <description>Builds, tests, and runs the project F17_csd322_Thomas_Taylor_Lab1.</description>
+>>>>>>> origin/Assignment2-thomas_taylor
     <import file="nbproject/build-impl.xml"/>
     <!--
 

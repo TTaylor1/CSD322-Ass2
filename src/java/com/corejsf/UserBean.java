@@ -6,6 +6,7 @@
 package com.corejsf;
 
 import java.io.Serializable;
+
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 //import javax.inject.Named;
@@ -62,6 +63,7 @@ public class UserBean implements Serializable{
      */
     public void setDate1(String date1) {
         
+
     }
     
 }
