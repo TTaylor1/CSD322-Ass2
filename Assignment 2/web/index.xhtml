@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Presentation Sign-up</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </meta>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" href="/resources/demos/style.css"/>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <h3>Please enter your Name, Address, and Date of Birth.</h3>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><h:inputText value="#{user.name}" required = "true">
+                          <f:validateLength minimum="0" maximum="150"/>
+                          </h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><h:inputText value="#{user.address}" required = "true">
+                           <f:validateLength minimum="1" maximum="150"/>
+                        </h:inputText>
+                    </td>
+                </tr> 
+                
+                <tr>
+                    <td>Date of birth:</td>
+                    <td>                        
+                        <input type="text" id="datepicker" value="#{user.date}" required = "true"/>   
+                        <f:validator validatorId="com.corejsf.dateValidator"/> 
+                    </td>     
+                </tr>
+                
+            </table>
+            <p><h:commandButton value="Submit" action="thanks"/></p>
+        </h:form>    
+    </h:body>
+</html>
+
